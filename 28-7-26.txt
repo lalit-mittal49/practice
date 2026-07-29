@@ -1,0 +1,85 @@
+import csv
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+#1
+print('1. Traditional\n2. ML (Supervised)\n3. ML (Unsupervised)\n4. ML (Reinforcement)\n5. ML (Unsupervised)\n6. ML (Semi Supervised)\n7. ML (Reinforcement)\n8. Traditional')
+
+#2
+df=pd.read_csv('Students_preparation.csv')
+print('Students_preparation')
+print(df.head(1))
+print('features: Student Name, Age, Study Hours, Attendance, City ')
+print('Target: Final marks')
+print(df['Student_Name'].value_counts())
+print('5 features')
+
+#3
+print('Features: Area, Bedroooms, Bathrooms, City\nTarget: Price ')
+print('\nFeatures: no. of seats, Engine, Fuel type, Brand, Model \nTarget: Car price')
+print('\nFeatures: Working time, Department, Years of exp, Age \nTarget: Employee salary ')
+print('\nFeatures: Age, Blood pressure level, sugar level, BMI \nTarget: Diabetes prediction')
+print('\nFeatures: Credit score, Amount required, Time for lending, pay on time\nTarget: Loan Approval')
+print('\nFeatures: Genre, duration, rating, platform\nTarget: Movie collection')
+
+#4
+print('Regression\nclassification\nRegression\nClassification\nRegression\nclassification\nR\nclassification\nR\nclassification')
+
+#5
+1. collect dataset(bank.csv)
+2. EDA
+3. Features: Bank account, monthly transaction, average balance, acc balance, transaction history
+4. target: credit card Approval
+5. Train-Test Split
+6. Train model
+7. prediction
+8. Evaluation
+
+#6
+2 yrs: 37000
+4 yrs: 49000
+6 yrs: 61000
+8 yrs: 73000
+10 yrs: 85000
+
+6000 represents slope which increases with increase in years of experience
+25000 represents baseline which is a base salary for every employee
+
+#7
+dataset= mobile_price
+observation : 50
+Features: Storage, RAM, Battery health, Processor, Color, Brand
+Target: Mobile Price
+
+#8
+dataset: NameExperienceSkillsSalary
+observations: all rows
+Features: Name, Experience, Skills
+Target: salary
+Training data 70% rows
+testing data remaining rows
+algo= Linear Regression
+Model: Specific rule 
+prdiction: value given by model for new observations
+
+#9
+dataset: age, sex, bmi, children, smoker, region, and charges
+1. smoker
+2. region
+3. smoker sex region
+4. charges
+5. age, bmi, children, charges
+
+#10
+Problem Statement
+Buying or selling a pre-owned vehicle requires accurately estimating its current fair market value
+Dataset: Car_Name, Year, Present_Price, Kms_Driven, Fuel_Type, Seller_Type, Transmission, Owner, Engine_CC, Selling_Price
+Features: Year, Present_Price, Kms_Driven, Fuel_Type, Seller_Type, Transmission, Owner, Engine_CC
+Target: car price
+Supervised ML
+Regression
+ML learns relationship between old and used cars to predict their Price
+Linear regression
+R2 score
