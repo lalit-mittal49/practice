@@ -1,0 +1,151 @@
+Customer_ID,First_Name,Last_Name,Email,Phone_Number,Preferred_Cuisine,Favorite_Food_Item,Visit_Frequency,Avg_Spend_Per_Visit_USD,Preferred_Order_Type,Loyalty_Member,Satisfaction_Rating
+1001,Amit,Sharma,amit.sharma1001@example.com,+91-9876543001,Mexican,Butter Chicken & Naan,Weekly,13.33,Takeaway,Yes,3.8
+1002,Priya,Patel,priya.patel1002@example.com,+91-9876543002,Mexican,,Weekly,43.3,Dine-in,Yes,3.6
+1003,Rahul,Verma,rahul.verma1003@example.com,+91-9876543003,Continental,Grilled Margherita Pizza Chicken Salad,Weekly,41.75,Delivery,No,3.8
+1004,Sneha,Gupta,sneha.gupta1004@example.com,+91-9876543004,Chinese,Margherita Pizza,Weekly,52.22,Dine-in,No,4.0
+1005,Vikram,Singh,vikram.singh1005@example.com,+91-9876543005,Italian,Veg Hakka Noodles,Monthly,17.42,Takeaway,Yes,4.0
+1006,Ananya,Reddy,ananya.reddy1006@example.com,+91-9876543006,Continental,Masala Dosa,Monthly,54.78,Delivery,No,4.3
+1007,Rohan,Mehta,rohan.mehta1007@example.com,+91-9876543007,North Indian,Butter Chicken & Naan,Monthly,55.96,Delivery,No,4.4
+1008,Neha,Joshi,neha.joshi1008@example.com,+91-9876543008,North Indian,Masala Dosa,Bi-weekly,52.97,Dine-in,Yes,4.8
+1009,Karan,Malhotra,karan.malhotra1009@example.com,+91-9876543009,Chinese,Margherita Pizza,Occasional,45.69,Takeaway,Yes,4.1
+1010,Pooja,Nair,pooja.nair1010@example.com,+91-9876543010,Mexican,Margherita Pizza,Monthly,49.2,Delivery,Yes,4.4
+1011,Aarav,Kaur,aarav.kaur1011@example.com,+91-9876543011,Continental,Grilled Chicken Salad,Bi-weekly,20.66,Takeaway,No,5.0
+1012,Diya,Sengupta,diya.sengupta1012@example.com,+91-9876543012,Italian,Veg Hakka Noodles,Monthly,56.67,Dine-in,Yes,4.7
+1013,Siddharth,Rao,siddharth.rao1013@example.com,+91-9876543013,South Indian,Masala Dosa,Monthly,15.51,Delivery,No,3.8
+1014,Ishaan,Chawla,ishaan.chawla1014@example.com,+91-9876543014,South Indian,Grilled Chicken Salad,Occasional,19.57,Dine-in,Yes,4.6
+1015,Kavya,Bhasin,kavya.bhasin1015@example.com,+91-9876543015,Chinese,Margherita Pizza,Occasional,59.58,Takeaway,No,3.8
+1016,Arjun,Deshmukh,arjun.deshmukh1016@example.com,+91-9876543016,Continental,Margherita Pizza,Occasional,16.82,Dine-in,Yes,3.7
+1017,Riya,Kapoor,riya.kapoor1017@example.com,+91-9876543017,Asian Fusion,Masala Dosa,Occasional,43.61,Takeaway,No,4.4
+1018,Aditya,Bhatt,aditya.bhatt1018@example.com,+91-9876543018,Continental,Grilled Chicken Salad,Monthly,63.47,Dine-in,Yes,4.5
+1019,Meera,Iyer,meera.iyer1019@example.com,+91-9876543019,Asian Fusion,Margherita Pizza,Monthly,52.74,Takeaway,Yes,3.9
+1020,Yash,Saxena,yash.saxena1020@example.com,+91-9876543020,South Indian,Margherita Pizza,Weekly,62.55,Delivery,No,5.0
+1021,Aanya,Chopra,aanya.chopra1021@example.com,+91-9876543021,Continental,Margherita Pizza,Weekly,58.14,Takeaway,Yes,3.7
+1022,Kabir,Dutta,kabir.dutta1022@example.com,+91-9876543022,Continental,Veg Hakka Noodles,Weekly,43.74,Takeaway,Yes,3.7
+1023,Tanvi,Garg,tanvi.garg1023@example.com,+91-9876543023,Asian Fusion,Masala Dosa,Monthly,24.69,Dine-in,Yes,3.6
+1024,Dev,Nambiar,dev.nambiar1024@example.com,+91-9876543024,Asian Fusion,Masala Dosa,Weekly,63.83,Delivery,Yes,3.7
+1025,Sanya,Ahuja,sanya.ahuja1025@example.com,+91-9876543025,Continental,Grilled Chicken Salad,Bi-weekly,26.05,Delivery,No,4.9
+1026,Vivaan,Jain,vivaan.jain1026@example.com,+91-9876543026,Asian Fusion,Grilled Chicken Salad,Bi-weekly,49.79,Takeaway,No,4.2
+1027,Anushka,Pandey,anushka.pandey1027@example.com,+91-9876543027,South Indian,Grilled Chicken Salad,Weekly,25.14,Dine-in,No,3.5
+1028,Aarush,Aggarwal,aarush.aggarwal1028@example.com,+91-9876543028,Italian,Butter Chicken & Naan,Bi-weekly,12.38,Delivery,Yes,3.8
+1029,Kriti,Sinha,kriti.sinha1029@example.com,+91-9876543029,Asian Fusion,Margherita Pizza,Monthly,15.76,Dine-in,No,4.5
+1030,Dhruv,Shetty,dhruv.shetty1030@example.com,+91-9876543030,Continental,Masala Dosa,Bi-weekly,50.34,Delivery,No,3.9
+1031,Prisha,Tiwari,prisha.tiwari1031@example.com,+91-9876543031,Asian Fusion,Masala Dosa,Occasional,22.09,Dine-in,No,4.0
+1032,Harsh,Bansal,harsh.bansal1032@example.com,+91-9876543032,South Indian,Veg Hakka Noodles,Weekly,47.69,Delivery,Yes,3.6
+1033,Avani,Pillai,avani.pillai1033@example.com,+91-9876543033,Asian Fusion,Margherita Pizza,Weekly,25.18,Dine-in,No,3.7
+1034,Reyansh,Mishra,reyansh.mishra1034@example.com,+91-9876543034,Chinese,Grilled Chicken Salad,Occasional,25.24,Dine-in,No,4.7
+1035,Shreya,Ghosh,shreya.ghosh1035@example.com,+91-9876543035,North Indian,Margherita Pizza,Weekly,46.56,Delivery,Yes,5.0
+1036,Madhav,Menon,madhav.menon1036@example.com,+91-9876543036,Italian,Margherita Pizza,Occasional,37.74,Dine-in,No,4.9
+1037,Tara,Kulkarni,tara.kulkarni1037@example.com,+91-9876543037,South Indian,Grilled Chicken Salad,Weekly,64.22,Takeaway,No,3.9
+1038,Shaurya,Varma,shaurya.varma1038@example.com,+91-9876543038,Mexican,Grilled Chicken Salad,Occasional,20.2,Takeaway,Yes,5.0
+1039,Aditi,Tripathi,aditi.tripathi1039@example.com,+91-9876543039,Mexican,Grilled Chicken Salad,Weekly,51.64,Dine-in,Yes,4.4
+1040,Veer,Thakur,veer.thakur1040@example.com,+91-9876543040,Asian Fusion,Butter Chicken & Naan,Bi-weekly,15.01,Delivery,Yes,4.8
+1041,Kiara,Grover,kiara.grover1041@example.com,+91-9876543041,Continental,Grilled Chicken Salad,Weekly,47.79,Dine-in,No,3.7
+1042,Rudra,Roy,rudra.roy1042@example.com,+91-9876543042,Italian,Margherita Pizza,Weekly,44.83,Takeaway,No,4.9
+1043,Ira,Narang,ira.narang1043@example.com,+91-9876543043,Mexican,Veg Hakka Noodles,Monthly,24.65,Takeaway,Yes,4.5
+1044,Parth,Shukla,parth.shukla1044@example.com,+91-9876543044,South Indian,Grilled Chicken Salad,Monthly,61.24,Dine-in,Yes,4.2
+1045,Anvi,Dewan,anvi.dewan1045@example.com,+91-9876543045,North Indian,Veg Hakka Noodles,Weekly,40.49,Delivery,No,3.7
+1046,Nikhil,Goyal,nikhil.goyal1046@example.com,+91-9876543046,North Indian,Veg Hakka Noodles,Bi-weekly,31.58,Dine-in,No,4.8
+1047,Riddhika,Dhar,riddhika.dhar1047@example.com,+91-9876543047,Continental,Butter Chicken & Naan,Weekly,47.4,Delivery,No,4.9
+1048,Tanish,Hegde,tanish.hegde1048@example.com,+91-9876543048,Italian,Grilled Chicken Salad,Monthly,18.12,Dine-in,Yes,3.9
+1049,Navya,Kashyap,navya.kashyap1049@example.com,+91-9876543049,Italian,Veg Hakka Noodles,Monthly,22.79,Delivery,No,4.3
+1050,Samarth,Sood,samarth.sood1050@example.com,+91-9876543050,Asian Fusion,Veg Hakka Noodles,Weekly,16.89,Takeaway,No,3.6
+1051,Amit,Sharma,amit.sharma1051@example.com,+91-9876543051,Asian Fusion,Grilled Chicken Salad,Bi-weekly,45.77,Takeaway,Yes,4.6
+1052,Priya,Patel,priya.patel1052@example.com,+91-9876543052,Mexican,Margherita Pizza,Occasional,41.73,Dine-in,Yes,4.9
+1053,Rahul,Verma,rahul.verma1053@example.com,+91-9876543053,Continental,Butter Chicken & Naan,Weekly,56.23,Delivery,Yes,4.1
+1054,Sneha,Gupta,sneha.gupta1054@example.com,+91-9876543054,Chinese,Margherita Pizza,Monthly,59.65,Dine-in,No,3.8
+1055,Vikram,Singh,vikram.singh1055@example.com,+91-9876543055,Mexican,Margherita Pizza,Weekly,30.74,Delivery,No,5.0
+1056,Ananya,Reddy,ananya.reddy1056@example.com,+91-9876543056,Italian,Veg Hakka Noodles,Bi-weekly,63.74,Dine-in,No,3.5
+1057,Rohan,Mehta,rohan.mehta1057@example.com,+91-9876543057,Asian Fusion,Butter Chicken & Naan,Occasional,54.52,Delivery,Yes,3.9
+1058,Neha,Joshi,neha.joshi1058@example.com,+91-9876543058,South Indian,Masala Dosa,Weekly,57.51,Dine-in,Yes,4.7
+1059,Karan,Malhotra,karan.malhotra1059@example.com,+91-9876543059,Chinese,Margherita Pizza,Monthly,55.49,Dine-in,Yes,3.5
+1060,Pooja,Nair,pooja.nair1060@example.com,+91-9876543060,South Indian,Grilled Chicken Salad,Monthly,26.77,Dine-in,No,4.0
+1061,Aarav,Kaur,aarav.kaur1061@example.com,+91-9876543061,South Indian,Veg Hakka Noodles,Monthly,61.78,Dine-in,No,3.8
+1062,Diya,Sengupta,diya.sengupta1062@example.com,+91-9876543062,North Indian,Grilled Chicken Salad,Weekly,43.62,Takeaway,No,4.2
+1063,Siddharth,Rao,siddharth.rao1063@example.com,+91-9876543063,North Indian,Masala Dosa,Occasional,59.67,Dine-in,No,3.6
+1064,Ishaan,Chawla,ishaan.chawla1064@example.com,+91-9876543064,North Indian,Butter Chicken & Naan,Bi-weekly,31.3,Dine-in,No,4.4
+1065,Kavya,Bhasin,kavya.bhasin1065@example.com,+91-9876543065,Mexican,Veg Hakka Noodles,Monthly,38.88,Delivery,No,4.0
+1066,Arjun,Deshmukh,arjun.deshmukh1066@example.com,+91-9876543066,Continental,Margherita Pizza,Bi-weekly,22.17,Delivery,No,4.5
+1067,Riya,Kapoor,riya.kapoor1067@example.com,+91-9876543067,Continental,Masala Dosa,Monthly,33.52,Dine-in,No,3.9
+1068,Aditya,Bhatt,aditya.bhatt1068@example.com,+91-9876543068,Asian Fusion,Margherita Pizza,Monthly,36.64,Takeaway,Yes,4.3
+1069,Meera,Iyer,meera.iyer1069@example.com,+91-9876543069,Mexican,Margherita Pizza,Weekly,27.04,Delivery,No,3.6
+1070,Yash,Saxena,yash.saxena1070@example.com,+91-9876543070,Mexican,Margherita Pizza,Monthly,23.91,Dine-in,Yes,3.5
+1071,Aanya,Chopra,aanya.chopra1071@example.com,+91-9876543071,South Indian,Masala Dosa,Weekly,36.14,Delivery,Yes,4.6
+1072,Kabir,Dutta,kabir.dutta1072@example.com,+91-9876543072,South Indian,Butter Chicken & Naan,Occasional,24.93,Delivery,Yes,4.8
+1073,Tanvi,Garg,tanvi.garg1073@example.com,+91-9876543073,Asian Fusion,Margherita Pizza,Occasional,23.6,Delivery,No,3.6
+1074,Dev,Nambiar,dev.nambiar1074@example.com,+91-9876543074,Asian Fusion,Masala Dosa,Weekly,36.19,Takeaway,No,4.9
+1075,Sanya,Ahuja,sanya.ahuja1075@example.com,+91-9876543075,Continental,Masala Dosa,Occasional,56.02,Delivery,No,4.8
+1076,Vivaan,Jain,vivaan.jain1076@example.com,+91-9876543076,South Indian,Grilled Chicken Salad,Monthly,51.84,Delivery,No,4.6
+1077,Anushka,Pandey,anushka.pandey1077@example.com,+91-9876543077,South Indian,Veg Hakka Noodles,Bi-weekly,26.55,Dine-in,No,3.9
+1078,Aarush,Aggarwal,aarush.aggarwal1078@example.com,+91-9876543078,Chinese,Margherita Pizza,Weekly,19.33,Dine-in,No,4.5
+1079,Kriti,Sinha,kriti.sinha1079@example.com,+91-9876543079,North Indian,Margherita Pizza,Occasional,33.6,Delivery,No,4.1
+1080,Dhruv,Shetty,dhruv.shetty1080@example.com,+91-9876543080,Asian Fusion,Grilled Chicken Salad,Occasional,32.64,Delivery,Yes,4.8
+1081,Prisha,Tiwari,prisha.tiwari1081@example.com,+91-9876543081,South Indian,Masala Dosa,Occasional,12.31,Takeaway,No,4.6
+1082,Harsh,Bansal,harsh.bansal1082@example.com,+91-9876543082,Continental,Masala Dosa,Bi-weekly,37.88,Takeaway,No,4.2
+1083,Avani,Pillai,avani.pillai1083@example.com,+91-9876543083,Chinese,Grilled Chicken Salad,Occasional,50.38,Takeaway,Yes,5.0
+1084,Reyansh,Mishra,reyansh.mishra1084@example.com,+91-9876543084,North Indian,Masala Dosa,Occasional,43.37,Delivery,Yes,3.6
+1085,Shreya,Ghosh,shreya.ghosh1085@example.com,+91-9876543085,Italian,Masala Dosa,Occasional,21.63,Takeaway,No,4.0
+1086,Madhav,Menon,madhav.menon1086@example.com,+91-9876543086,Chinese,Masala Dosa,Monthly,52.35,Takeaway,No,4.6
+1087,Tara,Kulkarni,tara.kulkarni1087@example.com,+91-9876543087,Chinese,Veg Hakka Noodles,Weekly,36.93,Delivery,Yes,5.0
+1088,Shaurya,Varma,shaurya.varma1088@example.com,+91-9876543088,Italian,Margherita Pizza,Weekly,53.41,Delivery,Yes,4.6
+1089,Aditi,Tripathi,aditi.tripathi1089@example.com,+91-9876543089,Italian,Butter Chicken & Naan,Weekly,44.93,Dine-in,Yes,4.2
+1090,Veer,Thakur,veer.thakur1090@example.com,+91-9876543090,Continental,Grilled Chicken Salad,Bi-weekly,36.65,Takeaway,No,3.8
+1091,Kiara,Grover,kiara.grover1091@example.com,+91-9876543091,Mexican,Butter Chicken & Naan,Weekly,53.22,Dine-in,No,3.7
+1092,Rudra,Roy,rudra.roy1092@example.com,+91-9876543092,Chinese,Margherita Pizza,Occasional,33.02,Delivery,Yes,3.6
+1093,Ira,Narang,ira.narang1093@example.com,+91-9876543093,North Indian,Grilled Chicken Salad,Monthly,57.07,Delivery,Yes,4.7
+1094,Parth,Shukla,parth.shukla1094@example.com,+91-9876543094,Asian Fusion,Veg Hakka Noodles,Weekly,30.4,Takeaway,No,3.6
+1095,Anvi,Dewan,anvi.dewan1095@example.com,+91-9876543095,North Indian,Masala Dosa,Occasional,55.58,Dine-in,No,4.9
+1096,Nikhil,Goyal,nikhil.goyal1096@example.com,+91-9876543096,Mexican,Grilled Chicken Salad,Bi-weekly,35.08,Delivery,No,4.4
+1097,Riddhika,Dhar,riddhika.dhar1097@example.com,+91-9876543097,Asian Fusion,Margherita Pizza,Occasional,36.64,Delivery,No,4.0
+1098,Tanish,Hegde,tanish.hegde1098@example.com,+91-9876543098,Asian Fusion,Grilled Chicken Salad,Weekly,26.78,Takeaway,Yes,4.6
+1099,Navya,Kashyap,navya.kashyap1099@example.com,+91-9876543099,Continental,Margherita Pizza,Occasional,29.83,Takeaway,No,3.8
+1100,Samarth,Sood,samarth.sood1100@example.com,+91-9876543100,Chinese,Grilled Chicken Salad,Monthly,30.04,Delivery,No,4.3
+1101,Amit,Sharma,amit.sharma1101@example.com,+91-9876543101,Italian,Margherita Pizza,Weekly,24.79,Takeaway,No,4.3
+1102,Priya,Patel,priya.patel1102@example.com,+91-9876543102,Mexican,Butter Chicken & Naan,Occasional,46.23,Takeaway,No,4.7
+1103,Rahul,Verma,rahul.verma1103@example.com,+91-9876543103,Chinese,Veg Hakka Noodles,Bi-weekly,33.43,Dine-in,No,4.5
+1104,Sneha,Gupta,sneha.gupta1104@example.com,+91-9876543104,South Indian,Masala Dosa,Monthly,34.55,Delivery,No,4.0
+1105,Vikram,Singh,vikram.singh1105@example.com,+91-9876543105,Chinese,Grilled Chicken Salad,Monthly,25.32,Dine-in,Yes,4.0
+1106,Ananya,Reddy,ananya.reddy1106@example.com,+91-9876543106,Asian Fusion,Grilled Chicken Salad,Bi-weekly,22.15,Delivery,No,3.9
+1107,Rohan,Mehta,rohan.mehta1107@example.com,+91-9876543107,Asian Fusion,Margherita Pizza,Monthly,63.97,Dine-in,No,3.8
+1108,Neha,Joshi,neha.joshi1108@example.com,+91-9876543108,Chinese,Butter Chicken & Naan,Weekly,49.52,Dine-in,No,3.6
+1109,Karan,Malhotra,karan.malhotra1109@example.com,+91-9876543109,Continental,Butter Chicken & Naan,Monthly,48.96,Dine-in,No,3.7
+1110,Pooja,Nair,pooja.nair1110@example.com,+91-9876543110,Continental,Butter Chicken & Naan,Monthly,36.88,Takeaway,No,3.8
+1111,Aarav,Kaur,aarav.kaur1111@example.com,+91-9876543111,Chinese,Grilled Chicken Salad,Occasional,18.05,Dine-in,No,4.2
+1112,Diya,Sengupta,diya.sengupta1112@example.com,+91-9876543112,Mexican,Margherita Pizza,Weekly,20.04,Delivery,No,3.6
+1113,Siddharth,Rao,siddharth.rao1113@example.com,+91-9876543113,North Indian,Masala Dosa,Occasional,44.13,Delivery,Yes,4.7
+1114,Ishaan,Chawla,ishaan.chawla1114@example.com,+91-9876543114,South Indian,Grilled Chicken Salad,Occasional,27.76,Delivery,No,4.0
+1115,Kavya,Bhasin,kavya.bhasin1115@example.com,+91-9876543115,North Indian,Butter Chicken & Naan,Weekly,62.22,Dine-in,Yes,3.9
+1116,Arjun,Deshmukh,arjun.deshmukh1116@example.com,+91-9876543116,Italian,Masala Dosa,Bi-weekly,21.21,Dine-in,Yes,3.5
+1117,Riya,Kapoor,riya.kapoor1117@example.com,+91-9876543117,Mexican,Masala Dosa,Occasional,27.44,Dine-in,No,4.6
+1118,Aditya,Bhatt,aditya.bhatt1118@example.com,+91-9876543118,North Indian,Grilled Chicken Salad,Bi-weekly,60.97,Delivery,Yes,4.1
+1119,Meera,Iyer,meera.iyer1119@example.com,+91-9876543119,Italian,Veg Hakka Noodles,Bi-weekly,60.15,Dine-in,Yes,3.6
+1120,Yash,Saxena,yash.saxena1120@example.com,+91-9876543120,Continental,Veg Hakka Noodles,Monthly,35.28,Takeaway,No,4.5
+1121,Aanya,Chopra,aanya.chopra1121@example.com,+91-9876543121,Continental,Veg Hakka Noodles,Occasional,35.2,Delivery,Yes,4.8
+1122,Kabir,Dutta,kabir.dutta1122@example.com,+91-9876543122,Continental,Veg Hakka Noodles,Monthly,13.37,Dine-in,Yes,5.0
+1123,Tanvi,Garg,tanvi.garg1123@example.com,+91-9876543123,Continental,Masala Dosa,Weekly,52.44,Dine-in,No,4.3
+1124,Dev,Nambiar,dev.nambiar1124@example.com,+91-9876543124,Chinese,Masala Dosa,Bi-weekly,64.84,Takeaway,No,5.0
+1125,Sanya,Ahuja,sanya.ahuja1125@example.com,+91-9876543125,Chinese,Veg Hakka Noodles,Occasional,29.67,Delivery,Yes,4.8
+1126,Vivaan,Jain,vivaan.jain1126@example.com,+91-9876543126,South Indian,Veg Hakka Noodles,Occasional,27.28,Takeaway,Yes,4.2
+1127,Anushka,Pandey,anushka.pandey1127@example.com,+91-9876543127,Chinese,Grilled Chicken Salad,Monthly,18.14,Takeaway,Yes,4.5
+1128,Aarush,Aggarwal,aarush.aggarwal1128@example.com,+91-9876543128,South Indian,Masala Dosa,Occasional,14.87,Delivery,No,4.4
+1129,Kriti,Sinha,kriti.sinha1129@example.com,+91-9876543129,Mexican,Veg Hakka Noodles,Occasional,52.28,Dine-in,No,4.3
+1130,Dhruv,Shetty,dhruv.shetty1130@example.com,+91-9876543130,South Indian,Veg Hakka Noodles,Occasional,18.44,Delivery,Yes,4.6
+1131,Prisha,Tiwari,prisha.tiwari1131@example.com,+91-9876543131,Continental,Butter Chicken & Naan,Weekly,41.27,Dine-in,Yes,5.0
+1132,Harsh,Bansal,harsh.bansal1132@example.com,+91-9876543132,South Indian,Veg Hakka Noodles,Weekly,46.33,Dine-in,No,4.9
+1133,Avani,Pillai,avani.pillai1133@example.com,+91-9876543133,Continental,Grilled Chicken Salad,Monthly,34.02,Takeaway,No,3.9
+1134,Reyansh,Mishra,reyansh.mishra1134@example.com,+91-9876543134,Italian,Veg Hakka Noodles,Occasional,22.1,Delivery,Yes,4.8
+1135,Shreya,Ghosh,shreya.ghosh1135@example.com,+91-9876543135,Asian Fusion,Veg Hakka Noodles,Occasional,30.01,Delivery,No,4.7
+1136,Madhav,Menon,madhav.menon1136@example.com,+91-9876543136,Mexican,Masala Dosa,Monthly,56.39,Delivery,No,4.8
+1137,Tara,Kulkarni,tara.kulkarni1137@example.com,+91-9876543137,Continental,Veg Hakka Noodles,Occasional,30.29,Delivery,No,4.2
+1138,Shaurya,Varma,shaurya.varma1138@example.com,+91-9876543138,Asian Fusion,Masala Dosa,Bi-weekly,63.98,Dine-in,No,3.9
+1139,Aditi,Tripathi,aditi.tripathi1139@example.com,+91-9876543139,North Indian,Margherita Pizza,Monthly,51.47,Delivery,No,4.1
+1140,Veer,Thakur,veer.thakur1140@example.com,+91-9876543140,South Indian,Masala Dosa,Weekly,18.69,Delivery,No,4.8
+1141,Kiara,Grover,kiara.grover1141@example.com,+91-9876543141,North Indian,Margherita Pizza,Occasional,12.81,Dine-in,No,4.8
+1142,Rudra,Roy,rudra.roy1142@example.com,+91-9876543142,North Indian,Masala Dosa,Occasional,53.42,Takeaway,No,4.4
+1143,Ira,Narang,ira.narang1143@example.com,+91-9876543143,Mexican,Masala Dosa,Weekly,57.14,Delivery,No,4.9
+1144,Parth,Shukla,parth.shukla1144@example.com,+91-9876543144,Asian Fusion,Butter Chicken & Naan,Weekly,44.73,Dine-in,No,5.0
+1145,Anvi,Dewan,anvi.dewan1145@example.com,+91-9876543145,South Indian,Veg Hakka Noodles,Weekly,52.3,Delivery,Yes,4.2
+1146,Nikhil,Goyal,nikhil.goyal1146@example.com,+91-9876543146,North Indian,Masala Dosa,Weekly,29.19,Dine-in,No,4.0
+1147,Riddhika,Dhar,riddhika.dhar1147@example.com,+91-9876543147,Italian,Butter Chicken & Naan,Bi-weekly,40.15,Delivery,Yes,3.8
+1148,Tanish,Hegde,tanish.hegde1148@example.com,+91-9876543148,Continental,Margherita Pizza,Occasional,44.84,Dine-in,No,4.9
+1149,Navya,Kashyap,navya.kashyap1149@example.com,+91-9876543149,Italian,Masala Dosa,Occasional,45.81,Takeaway,No,4.5
+1150,Samarth,Sood,samarth.sood1150@example.com,+91-9876543150,Chinese,Masala Dosa,Bi-weekly,15.91,Takeaway,No,4.5
