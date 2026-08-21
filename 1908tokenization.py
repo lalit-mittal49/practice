@@ -1,178 +1,217 @@
 import numpy as np
 import pandas as pd
-import nltk
-from sympy import re
+import string
 import re
-from nltk import word_tokenize
-from nltk import sent_tokenize
+import nltk
+from nltk.tokenize import sent_tokenize, word_tokenize
+from nltk.corpus import stopwords
+from nltk.util import ngrams
+
+nltk.download('punkt', quiet=True)
+nltk.download('stopwords', quiet=True)
 
 #1
-""" from nltk.tokenize import sent_tokenize
-para=str(input("Enter the paragraph: "))
-sentenses=sent_tokenize(para)
+para = str(input("Enter the paragraph: "))
+sentences = sent_tokenize(para)
+words = word_tokenize(para)
 
-from nltk import word_tokenize
-words=word_tokenize(para)
-
-print(len(sentenses))
-print(len(words))
-print(sentenses)
-print(words) """
+print(f"Total Sentences: {len(sentences)}")
+print(f"Total Words/Tokens: {len(words)}")
+print(f"Sentences: {sentences}")
+print(f"Words: {words}")
 
 #2
-""" para=str(input("Enter the paragraph: "))
-lowered=str(para).lower()
-from nltk import word_tokenize
-words=word_tokenize(lowered)
-unique=set(words)
-max_count=0
-for i in sorted(unique, key=words.count,reverse=True):
-    frequency=words.count(i)
-    print(f"{i} : {frequency}") """
+para = str(input("Enter the paragraph: "))
+lowered = str(para).lower()
+words = word_tokenize(lowered)
+unique = set(words)
+
+for i in sorted(unique, key=words.count, reverse=True):
+    frequency = words.count(i)
+    print(f"{i} : {frequency}")
 
 #3
-""" para=str(input('enter: '))
-words=re.sub(r'[^a-zA-Z]',' ', para)
-print(word_tokenize(words))
-punctuation=re.sub(r'[a-zA-Z0-9]',' ', para)
-print(set(word_tokenize(punctuation)))
-numbers=re.sub(r'[^\d.]',' ', para)
-numTokens=word_tokenize(numbers)
-for i in numTokens:
-    if i=='.':
-        numTokens.remove(i)
-print(numTokens) """
+para = str(input('Enter: '))
+words = word_tokenize(para)
+
+alpha = []
+nums = []
+alphanumeric = []
+punctuations = []
+
+for i in words:
+    if i.isalpha():
+        alpha.append(i)
+    elif i.isdigit():
+        nums.append(i)
+    elif i.isalnum():
+        alphanumeric.append(i)
+    else:
+        punctuations.append(i)
+
+print(f"Alphabetic tokens: {alpha}")
+print(f"Numeric tokens: {nums}")
+print(f"Alphanumeric/Mixed tokens: {alphanumeric}")
+print(f"Punctuation & Special Symbols: {list(set(punctuations))}")
 
 #4
-""" para=str(input('enter: '))
-words=word_tokenize(para)
-print(len(words))
-print(len(set(words)))
-print(len(word_tokenize(re.sub(r'[^a-zA-Z]',' ', para))))
-numTokens=word_tokenize(re.sub(r'[^0-9.]',' ', para))
-for i in numTokens:
-    if i=='.':
-        numTokens.remove(i)
-print(len(numTokens))
-print(len(word_tokenize(re.sub(r'[^a-zA-Z0-9]',' ', para))))
-print(max(words, key=len))
-print(min(words, key=len)) """
+para = str(input('Enter: '))
+words = word_tokenize(para)
+
+alpha_tokens = [w for w in words if w.isalpha()]
+numeric_tokens = [w for w in words if w.isdigit() or re.match(r'^\d+(\.\d+)?$', w)]
+special_tokens = [w for w in words if not w.isalnum() and not re.match(r'^\d+(\.\d+)?$', w)]
+
+print(f"Total Tokens: {len(words)}")
+print(f"Unique Tokens (Vocabulary Size): {len(set(words))}")
+print(f"Alphabetic Token Count: {len(alpha_tokens)}")
+print(f"Numeric Token Count: {len(numeric_tokens)}")
+print(f"Special Characters/Punctuation Count: {len(special_tokens)}")
+
+word_only_tokens = [w for w in words if w.isalnum()]
+if word_only_tokens:
+    print(f"Longest Word: {max(word_only_tokens, key=len)}")
+    print(f"Shortest Word: {min(word_only_tokens, key=len)}")
 
 #5
-""" para=str(input('enter: '))
+para = str(input('Enter: '))
+
 def clean_text(text):
-    text=str(text).lower()
-    text=re.sub(r'[^a-zA-Z]',' ', text)
-    words=word_tokenize(text)
-    tokens=[]
-    for i in words:
-        if len(i)>=3:
-            tokens.append(i)
+    text = str(text).lower()
+    text = re.sub(r'[^a-zA-Z\s]', ' ', text)
+    words = word_tokenize(text)
+    tokens = [i for i in words if len(i) >= 3]
     return tokens
-print(clean_text(para)) """
+
+print(clean_text(para))
 
 #6
-""" para=str(input('enter: '))
+para = str(input('Enter: '))
+
 def pipeline(text):
-    sentences=sent_tokenize(text)
+    sentences = sent_tokenize(text)
     print(f'Sentences : {sentences}')
-    words=word_tokenize(text)
+    
+    words = word_tokenize(text)
     print(f'Words : {words}')
-    lowered=[]
-    for w in words:
-        lowered.append(w.lower())
+    
+    lowered = [w.lower() for w in words]
     print(f'Lower cased : {lowered}')
-    punctuation=re.sub(r'[a-zA-Z0-9]',' ', text)
-    puncTokens=word_tokenize(punctuation)
-    print(f'Punctuation : {puncTokens}')
-    afterPunc=[]
-    for i in lowered:
-        if i not in puncTokens:
-            afterPunc.append(i)
+    
+    punctuation_set = set(string.punctuation)
+    afterPunc = [w for w in lowered if w not in punctuation_set and any(c.isalnum() for c in w)]
     print(f'After removing punctuation : {afterPunc}')
-pipeline(para) """
+    
+    stop_words = set(stopwords.words('english'))
+    afterStopwords = [w for w in afterPunc if w not in stop_words]
+    print(f'After removing stopwords : {afterStopwords}')
+    
+    final_tokens = [w for w in afterStopwords if len(w) >= 2]
+    print(f'Final Clean Tokens : {final_tokens}')
+
+pipeline(para)
 
 #7
-""" para="I love #Python6 and #AI ! 12345 Check https://example.com @student123 :blush:"
-tokens1=str(para).split()
-tokens2=word_tokenize(para)
-tokens3=re.findall(r'\w+', para)
-print(f'Tokens1 : {tokens1} and length : {len(tokens1)}')   
-print(f'Tokens2 : {tokens2} and length : {len(tokens2)}')
-print(f'Tokens3 : {tokens3} and length : {len(tokens3)}') """
+para = "I love #Python6 and #AI ! 12345 Check https://example.com @student123 :blush:"
+
+tokens1 = para.split()
+tokens2 = word_tokenize(para)
+tokens3 = re.findall(r'\w+', para)
+
+print(f'Tokens1 (split())           : {tokens1} | Length: {len(tokens1)}')   
+print(f'Tokens2 (word_tokenize())   : {tokens2} | Length: {len(tokens2)}')
+print(f'Tokens3 (re.findall(\\w+))  : {tokens3} | Length: {len(tokens3)}')
+
+print("\n--- Comparison & Explanation ---")
+print("1. str.split(): Splits solely on whitespace. Punctuations and special characters stay attached to words (e.g., '!').")
+print("2. word_tokenize(): Separates punctuation marks, emojis, and symbols into individual tokens while preserving sentence grammar.")
+print("3. re.findall(r'\\w+'): Extracts only alphanumeric words/numbers; completely strips all punctuation, URLs, '@', and '#' symbols.")
 
 #8
-""" para="I love #Python6 and #AI ! 12345 Check https://example.com @student123 :blush:"
+para = "I love #Python6 and #AI ! 12345 Check https://example.com @student123 :blush:"
+
 def social_mediaTokenizer(text):
-    tokens=str(text).split()
-    print(f'Tokens : {tokens}')
-    hashtags=[]
-    mentions=[]
-    url=[]
-    emojis=[]
-    words=[]
-    numbers=[]
-    for i in tokens:
-        if i.startswith('#'):
-            hashtags.append(i)
-        elif i[:5]=='https':
-            url.append(i)
-        elif i[0]==':' and i[-1]==':':
-            emojis.append(i)
-        elif i.isalpha():
-            words.append(i)
-        elif i.isdigit():
-            numbers.append(i)
-    mentions=re.findall(r'@\w+', text)
-    print(f'Hashtag : {hashtags}')
-    print(f'Mention : {mentions}')
-    print(f'URL : {url}')
-    print(f'Emoji : {emojis}')
-    print(f'Words : {words}')
-    print(f'Numbers : {numbers}')
+    hashtags = re.findall(r'#\w+', text)
+    mentions = re.findall(r'@\w+', text)
+    urls = re.findall(r'https?://\S+', text)
+    emojis = re.findall(r':[a-zA-Z0-9_]+:', text)
+    
+    cleaned = text
+    for item in hashtags + mentions + urls + emojis:
+        cleaned = cleaned.replace(item, ' ')
+        
+    tokens = word_tokenize(cleaned)
+    words = [t for t in tokens if t.isalpha()]
+    numbers = [t for t in tokens if t.isdigit()]
+    special_chars = [t for t in tokens if not t.isalnum()]
 
-social_mediaTokenizer(para) """
+    print(f'Original Text   : {text}')
+    print(f'Hashtags        : {hashtags}')
+    print(f'Mentions        : {mentions}')
+    print(f'URLs            : {urls}')
+    print(f'Emojis          : {emojis}')
+    print(f'Words           : {words}')
+    print(f'Numbers         : {numbers}')
+    print(f'Special Chars   : {special_chars}')
 
-#9 doubt
-word='playing'
+social_mediaTokenizer(para)
 
-def clean(text):
-    words=word_tokenize(text)
-    print(f'Words : {words}')
-    print(f'characters: {str(words)}')
+#9
+word = 'playing'
 
-clean(word)
+def multi_level_tokenizer(text):
+    words = word_tokenize(text)
+    print(f'Word Tokens       : {words}')
+    
+    characters = [char for char in text if char != ' ']
+    print(f'Character Tokens  : {characters}')
+    
+    subwords_2gram = [''.join(bg) for bg in ngrams(text, 2)]
+    subwords_3gram = [''.join(tg) for tg in ngrams(text, 3)]
+    print(f'Subwords (2-grams): {subwords_2gram}')
+    print(f'Subwords (3-grams): {subwords_3gram}')
 
+multi_level_tokenizer(word)
 
 #10
-""" para="I love #Python6 and AI ! 12345 Check1 Check https/example.com @student123 blush:"
+para = "I love #Python6 and AI ! 12345 Check1 Check https://example.com @student123 :blush:"
+
 def nlpAnalyzer(txt):
-    sentences=sent_tokenize(txt)
-    print(f'Number of Sentences : {len(sentences)}')
-    words=word_tokenize(txt)
-    print(f'Words : {words}')
-    print(f'Number of Words : {len(words)}')
-    unique=set(words)
-    print(f'Number of Unique Tokens : {len(unique)}')
-    alphatok=0
-    numtok=0
-    punctok=0
+    sentences = sent_tokenize(txt)
+    words = word_tokenize(txt)
+    unique = set(words)
+    stop_words = set(stopwords.words('english'))
+    
+    alphatok = []
+    numtok = []
+    punctok = []
+    stopwordtok = []
+    
     for i in words:
         if i.isalpha():
-            alphatok+=1
+            alphatok.append(i)
+            if i.lower() in stop_words:
+                stopwordtok.append(i.lower())
         elif i.isdigit():
-            numtok+=1
-        else:
-            punctok+=1
-    print(f'Number of Alphabetic Tokens : {alphatok}')
-    print(f'Number of Numeric Tokens : {numtok}')
-    print(f'Number of Punctuation Tokens : {punctok}')
-    wordseries=pd.Series(words)
-    print(f'most common tokens : {wordseries.value_counts().head(1)}')
-    print(f'least common tokens : {wordseries.value_counts().tail(1)}')
-    print(f'most common tokens : {wordseries.value_counts().head(5)}')
-    print(f'averagelength : {wordseries.str.len().mean()}')
-    print(f'maxlength : {wordseries.str.len().max()}')
-    print(f'minlength : {wordseries.str.len().min()}')
+            numtok.append(i)
+        elif not i.isalnum():
+            punctok.append(i)
 
-nlpAnalyzer(para) """
+    cleaned_tokens = [w.lower() for w in words if w.isalnum() and w.lower() not in stop_words and len(w) >= 2]
+
+    print(f'Number of Sentences           : {len(sentences)}')
+    print(f'Total Tokens                  : {len(words)}')
+    print(f'Unique Tokens                 : {len(unique)}')
+    print(f'Number of Alphabetic Tokens   : {len(alphatok)}')
+    print(f'Number of Numeric Tokens      : {len(numtok)}')
+    print(f'Number of Punctuation Tokens  : {len(punctok)}')
+    print(f'Number of Stopwords           : {len(stopwordtok)}')
+    print(f'Final Cleaned Tokens          : {cleaned_tokens}')
+    
+    wordseries = pd.Series(words)
+    print(f'\nTop 5 Most Common Tokens      :\n{wordseries.value_counts().head(5)}')
+    print(f'\nAverage Token Length          : {wordseries.str.len().mean():.2f}')
+    print(f'Max Token Length              : {wordseries.str.len().max()}')
+    print(f'Min Token Length              : {wordseries.str.len().min()}')
+
+nlpAnalyzer(para)
