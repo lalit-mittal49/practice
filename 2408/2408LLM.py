@@ -108,8 +108,8 @@ explainer(codes) """
         contents='what is meaning of cybersecurity'
     )
     print(response.text)
-except Exception as error:
-    print('API not found') """
+except Exception as e:
+    print('API not found':,e) """
 
 #9
 """ def assistant(prompt):
@@ -139,12 +139,12 @@ if(text=='exit'):
 
 temp=input('You: ')
 templist=[]
-while(temp!='exit'):
+while(temp.lower()!='exit'):
     templist.append(temp)
     text=' '.join(templist)
     assistant(text+'answer only this question:'+temp)
     temp=input('You: ')
-if(temp=='exit'):
+if(temp.lower()=='exit'):
     print('GoodBye!') """
 
 #11
@@ -182,7 +182,7 @@ while(prompt.lower()!='exit'):
 ask('who are you') """
 
 #13
-""" import json
+import json
 import time
 def chatbot(prompt):
     for i in range(1,4):
@@ -190,18 +190,18 @@ def chatbot(prompt):
             api_key=os.getenv('GEMINI_API_KEY')
             client=genai.Client(api_key=api_key)
             response=client.models.generate_content(
-                model='gemini-3.6-flash',
+                model='gemini-3.5-flash',
                 contents=prompt,
                 config={'system_instruction': 'You are a chatbot assistant and give reply to every question of user to the point'}
             )
             print(f'AI : {response.text}')
             chatHist.append({"role": "assistant", "content": response.text})
             return response.text
-        except Exception as error:
+        except Exception as e:
             if i==3:
                 print(f'Attempt {i} failed.\nUnable to get response')
             else:
-                print(f'Attempt {i} failed.\nRetrying...')
+                print(f'Attempt {i} failed.\nRetrying...',e)
             time.sleep(3)
 
 def jsonread():
@@ -211,8 +211,8 @@ def jsonread():
     return output_list
 
 def jsonwrite():
-    with open('records.jsonl', "w", encoding="utf-8") as file:
-        json.dump(chatHist, file, indent=4, ensure_ascii=False)
+    with open('records.jsonl', "w") as file:
+        json.dump(chatHist, file, indent=4)
 
 query=input('User : ')
 global chatHist
@@ -222,74 +222,152 @@ while(query.lower()!='exit'):
     chatstr = json.dumps(chatHist)    
     chatbot(chatstr+'answer only this question:'+query)
     query=input('User : ')
-jsonwrite() """
+jsonwrite()
 
 #14
 
-#15
+"""import os
+import json
+import time
+import logging
+from dotenv import load_dotenv
+from google import genai
+from google.genai import types
 
-global gmodel
-gmodel='gemini-3.6-flash'
-def aiAssist(prompt):
-    api_key=os.getenv('GEMINI_API_KEY')
-    client=genai.Client(api_key=api_key)
+load_dotenv()
 
-    match(prompt):
+# Configure Logging
+logging.basicConfig(
+    filename="support.log",
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S"
+)
 
-        case '/explain':
-            codelist=[]
-            print('Assistant - Enter Code:\n')
-            while (code!=exit):
-                code=input()
-                codelist.append(code)
-            codestr=' '.join(codelist)
-            response=client.models.generate_content(
-                model=gmodel,
-                contents=codestr,
-                config={'system_instruction':'you are a tutor and you have to explain code in very easy method so that user can understand easily'}
+# Mock Store Data
+STORE_DATA = {
+    "products": {
+        "laptop": {"price": 65000, "stock": 5},
+        "keyboard": {"price": 2500, "stock": 12},
+        "mouse": {"price": 1200, "stock": 25},
+        "monitor": {"price": 18000, "stock": 3}
+    },
+    "orders": {
+        "ORD1001": {"item": "laptop", "status": "Shipped", "delivery_date": "2026-09-02"},
+        "ORD1002": {"item": "keyboard", "status": "Processing", "delivery_date": "2026-09-05"},
+        "ORD1003": {"item": "mouse", "status": "Delivered", "delivery_date": "2026-08-28"}
+    }
+}
+
+SYSTEM_INSTRUCTION = f
+You are a polite, professional, and empathetic customer support agent for 'TechNova Store'.
+Your duties:
+1. Answer product inquiries and assist with orders using ONLY the store database provided below.
+2. Handle complaints with patience and offer constructive steps.
+3. NEVER invent or hallucinate order statuses or product details.
+4. If an order ID or product name is missing, politely ask the user for it.
+5. If an order ID is not in the database, explicitly inform the user that it was not found.
+
+Store Database:
+{json.dumps(STORE_DATA, indent=2)}
+
+
+HISTORY_FILE = "support_history.json"
+
+def load_history():
+    if os.path.exists(HISTORY_FILE):
+        try:
+            with open(HISTORY_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception as e:
+            logging.error(f"Failed to read {HISTORY_FILE}: {e}")
+    return []
+
+def save_history(history):
+    try:
+        with open(HISTORY_FILE, "w", encoding="utf-8") as f:
+            json.dump(history, f, indent=2, ensure_ascii=False)
+    except Exception as e:
+        logging.error(f"Failed to save history: {e}")
+
+def call_gemini(client, contents, model="gemini-2.5-flash", max_retries=3):
+    logging.info("API request started")
+    for attempt in range(1, max_retries + 1):
+        try:
+            config = types.GenerateContentConfig(
+                system_instruction=SYSTEM_INSTRUCTION,
+                temperature=0.2
             )
-            print(f'Assistant - Explanation : \n{response.text}')
-            chathist.append('Assistant - Explanation : '+response.text)
-
-        case '/code':
-            ques=input('Assistant - Enter question:\n')
-            response=client.models.generate_content(
-                model=gmodel,
-                contents=ques,
-                config={'system_instruction': 'you are developer and write code in proffessional way and precise it should be clean and basic so that it could be understood easily'}
+            response = client.models.generate_content(
+                model=model,
+                contents=contents,
+                config=config
             )
-            print(f'Assistant - Generated Code :\n{response.text}')
-            chathist.append('Assistant - Generated Code : '+response.text)
+            logging.info("API request completed")
+            return response.text
+        except Exception as e:
+            logging.error(f"API error on attempt {attempt}: {e}")
+            if attempt == max_retries:
+                print(f"\n[Error] Unable to reach support servers after {max_retries} attempts.")
+                return None
+            print(f"[Warning] Connection attempt {attempt} failed. Retrying...")
+            logging.info(f"Retry attempt {attempt + 1}")
+            time.sleep(2 * attempt)
 
-        case '/summarize':
-            text=input('Assistant - Enter text : ')
-            response=client.models.generate_content(
-                model=gmodel,
-                contents=text,
-                config={'system_instruction': 'you have to summarize text and convert it into very short note and only include important things'}
+def main():
+    logging.info("Application started")
+    api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        print("Error: GEMINI_API_KEY is missing from environment variables.")
+        return
+
+    client = genai.Client(api_key=api_key)
+    chat_history = load_history()
+
+    print("==================================================")
+    print("Welcome to TechNova Customer Support (Type 'exit' to quit)")
+    print("==================================================")
+
+    # Format history for multi-turn context
+    formatted_contents = []
+    for turn in chat_history:
+        formatted_contents.append(
+            types.Content(
+                role=turn["role"],
+                parts=[types.Part.from_text(text=turn["content"])]
             )
-            print(f'Assistant - Summary : {response.text}')
-            chathist.append('Assistant - Summary : '+response.text)
+        )
 
-        case '/model':
-            gmodel=input('Assistant - Enter model name you want to use :')
-            print(f'Assistant - Model changed to {gmodel}')
-            chathist.append('Assistant - Model changed to '+gmodel)
+    while True:
+        try:
+            user_input = input("\nYou: ").strip()
+        except (KeyboardInterrupt, EOFError):
+            break
 
-        case '/history':
-            print()
+        if not user_input:
+            continue
+        if user_input.lower() == "exit":
+            break
 
-        case _:
-            response=client.models.generate_content(
-                model=gmodel,
-                contents=prompt,
-                config={'system_instruction':'You are an CLI assistant so answer perfectly and calmly'}
+        logging.info("User request received")
+        
+        # Append user message
+        formatted_contents.append(
+            types.Content(role="user", parts=[types.Part.from_text(text=user_input)])
+        )
+        chat_history.append({"role": "user", "content": user_input})
+
+        response_text = call_gemini(client, formatted_contents)
+        if response_text:
+            print(f"\nSupport: {response_text}")
+            formatted_contents.append(
+                types.Content(role="model", parts=[types.Part.from_text(text=response_text)])
             )
-            print(f'Assistant - {response.text}')
+            chat_history.append({"role": "model", "content": response_text})
 
-temp=input('User : ')
-global chathist
-chathist=[]
-while(temp.lower()!='exit'):
-    chathist.append(f'User - {temp}')
-    aiAssist(temp)
+    save_history(chat_history)
+    logging.info("Application closed")
+    print("\nThank you for reaching out to TechNova. Have a great day!")
+
+if __name__ == "__main__":
+    main() """
